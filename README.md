@@ -13,9 +13,11 @@ Example output:
 
 ```
 master
-hotfix
+dev
   10c527f Patchset 2
   -> d32a2f6 Patchset 1
+hotfix
+  skipped (upstream is deleted)
 ```
 
 ## Installation
