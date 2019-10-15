@@ -18,10 +18,9 @@ hard_reset_all() {
     remote=$(echo "$line" | awk '{print $2}')
     upstream=$(git config --local --get "branch.$branch.merge" | cut -c 12-)
 
-    echo "$branch"
-
     if ! git rev-parse --verify --quiet "$remote/$upstream" 1>&- 2>&-; then
       ret=1
+      echo "Branch $branch"
       echo "  skipped (upstream is deleted)"
       continue
     fi
@@ -29,6 +28,8 @@ hard_reset_all() {
     if [ -z "$(git log --oneline -1 "$branch...$remote/$upstream")" ]; then
       continue
     fi
+
+    echo "Branch $branch"
 
     echo "  $(git log --oneline -1 $branch)"
     if [ "refs/heads/$branch" = "$curref" ]; then
