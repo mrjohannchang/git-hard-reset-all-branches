@@ -6,7 +6,6 @@ Inspired by [Reset all branches of a local repo to be the same as remote](https:
 ## Usage
 
 ```
-git fetch --all  # Optional
 git hard-reset-all
 ```
 
