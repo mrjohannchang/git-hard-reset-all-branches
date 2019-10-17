@@ -13,7 +13,6 @@ Example output:
 
 ```
 master
-dev
   10c527f Patchset 2
   -> d32a2f6 Patchset 1
 hotfix
